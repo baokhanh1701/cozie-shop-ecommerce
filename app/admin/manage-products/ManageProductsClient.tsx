@@ -21,7 +21,7 @@ import { deleteObject, getStorage, ref } from "firebase/storage";
 import firebaseApp from "@/libs/firebase";
 
 interface ManageProductsClientProps {
-  products: Product[];
+  products: Product[] | null;
 }
 
 const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
