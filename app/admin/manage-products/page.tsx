@@ -4,6 +4,7 @@ import getProducts from "@/actions/getProducts";
 import getCurrentUser from "@/actions/getCurrentUser";
 import NullData from "@/app/components/NullData";
 
+
 const ManageProducts = async() => {
 
   const products = await getProducts({category: null})
