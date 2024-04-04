@@ -1,5 +1,4 @@
 "use server";
-
 import jsonata from "jsonata";
 import { Client, Environment, ApiError } from "square";
 
@@ -19,11 +18,11 @@ export default async function getProductsFromSquare() {
       "",
       "ITEM"
     );
+    const { statusCode } = httpResponse;
     const expression = jsonata(jsonata_query);
     const products = await expression.evaluate(result);
-    console.log(products);
+    console.log(statusCode);
     return products;
-
   } catch (error: any) {
     if (error instanceof ApiError) {
       error.result.errors.forEach(function (e) {
@@ -45,4 +44,3 @@ curl https://connect.squareup.com/v2/catalog/list?types=ITEM&cursor= \
   -H 'Authorization: Bearer EAAAlz_Brq_K9jP9cdHn9GoJ-PgpvrIcn5vb-XHTjQTWklL8kVLDRiuj-QwHMTH1' \
   -H 'Content-Type: application/json'
 */
-
