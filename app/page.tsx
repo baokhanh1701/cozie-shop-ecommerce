@@ -13,6 +13,8 @@ interface HomeProps{
 }
 export default async function Home({searchParams}: HomeProps) {
   const products = await getProducts(searchParams)
+  // const products_from_square = await getProductsFromSquare()
+  // console.log(products_from_square)
 
   if(products.length === 0){
     return <NullData title = 'Oops! No products found. Click "All" to clear filters'/>
@@ -41,8 +43,8 @@ export default async function Home({searchParams}: HomeProps) {
             return <ProductCard data={product} key={product.id}/>;
           })}
         </div>
-        <TestActions />
       </Container>
+      <TestActions getProductsFromSquare={getProductsFromSquare} />
     </div>
   );
 }

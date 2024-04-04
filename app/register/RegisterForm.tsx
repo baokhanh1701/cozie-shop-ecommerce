@@ -10,7 +10,7 @@ import { AiOutlineGoogle } from "react-icons/ai";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { user } from "next/navigation";
 import { SafeUser } from "@/types";
 
 interface RegisterFormProps {
@@ -31,12 +31,12 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
     },
   });
 
-  const router = useRouter();
+  const r = user();
 
   useEffect(() => {
     if (currentUser) {
-      router.push("/cart");
-      router.refresh();
+      r.push("/cart");
+      r.refresh();
     }
   }, []);
 
@@ -54,8 +54,8 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
           redirect: false,
         }).then((callback) => {
           if (callback?.ok) {
-            router.push("/cart");
-            router.refresh();
+            r.push("/cart");
+            r.refresh();
             toast.success("Logged In");
           }
 

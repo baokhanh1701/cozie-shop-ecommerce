@@ -1,8 +1,11 @@
-"use client"
-import getProductsFromSquare from "@/actions/getProductsFromSquare";
-
-export default async function testActions() {
+export default async function testActions({
+  getProductsFromSquare
+}) {
   return (
-    <button onClick={getProductsFromSquare}>Get Products From Square</button>
+    <form action={getProductsFromSquare}>
+      <button type="submit">
+        Get Products From Square
+      </button>
+    </form>
   );
 }
