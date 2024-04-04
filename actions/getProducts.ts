@@ -51,6 +51,7 @@ export default async function getProducts(params: IProductParams) {
     //   return null;
     // }
 
+    console.log(products)
     return products;
   } catch (error: any) {
     throw new Error(error);

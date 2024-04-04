@@ -6,11 +6,11 @@ import { truncateText } from "@/utils/truncateText";
 import ProductCard from "./components/products/ProductCard";
 import getProducts, { IProductParams } from "@/actions/getProducts";
 import NullData from "./components/NullData";
-
+import getProductsFromSquare from "@/actions/getProductsFromSquare";
+import TestActions from "./components/testActions";
 interface HomeProps{
   searchParams: IProductParams
 }
-
 export default async function Home({searchParams}: HomeProps) {
   const products = await getProducts(searchParams)
 
@@ -41,6 +41,7 @@ export default async function Home({searchParams}: HomeProps) {
             return <ProductCard data={product} key={product.id}/>;
           })}
         </div>
+        <TestActions />
       </Container>
     </div>
   );
