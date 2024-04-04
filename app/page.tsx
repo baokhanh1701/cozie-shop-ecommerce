@@ -43,7 +43,7 @@ export default async function Home({searchParams}: HomeProps) {
           })}
         </div>
       </Container>
-      <TestActions getProductsFromSquare={getProductsFromSquare} />
+      {/* <TestActions getProductsFromSquare={getProductsFromSquare} /> */}
     </div>
   );
 }
