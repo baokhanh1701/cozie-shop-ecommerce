@@ -10,7 +10,7 @@ import { AiOutlineGoogle } from "react-icons/ai";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
-import { user } from "next/navigation";
+import { useRouter  } from "next/navigation";
 import { SafeUser } from "@/types";
 
 interface RegisterFormProps {
@@ -31,7 +31,7 @@ const RegisterForm: React.FC<RegisterFormProps> = ({ currentUser }) => {
     },
   });
 
-  const r = user();
+  const r = useRouter();
 
   useEffect(() => {
     if (currentUser) {

@@ -43,7 +43,6 @@ export default async function getProducts(params: IProductParams) {
     for (const product of products_from_square) {
       const { name, description, brand, category, inStock, images, price, id } =
         product;
-      console.log(generateObjectIdLikeString(id));
 
       const existing_product = await prisma.product.findFirst({
         where: {
