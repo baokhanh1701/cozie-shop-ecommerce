@@ -18,7 +18,7 @@ const { catalogApi } = square_client;
 
 export default async function getProductsFromSquare() {
   const jsonata_query: string =
-    "($getItem := function($input_image_id) {($.objects[type='IMAGE'][id=$input_image_id].imageData.url)};    $.objects[type='ITEM'].{'images': [{'color': 'Blue','colorCode': '#0000FF','image': $getItem(itemData.imageIds[0])}],'id': id,'name': itemData.name,'description': itemData.description,'price': itemData.variations[0].itemVariationData.priceMoney.amount,'brand': 'Cozie Shop','category': 'Accessories','inStock': true,'reviews': []})";
+    "(    $getItem := function($input_image_id) {        ($.objects[type='IMAGE'][id=$input_image_id].imageData.url)    };$.objects[type='ITEM'].{    'images':     [        {            'color': 'Blue',            'colorCode': '#0000FF',            'image': $getItem(itemData.imageIds[0]) ? $getItem(itemData.imageIds[0]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        },        {            'color': 'Black',            'colorCode': '#000000',            'image': $getItem(itemData.imageIds[1]) ? $getItem(itemData.imageIds[1]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        },        {            'color': 'Silver',            'colorCode': '#c0c0c0',            'image': $getItem(itemData.imageIds[2]) ? $getItem(itemData.imageIds[2]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        },        {            'color': 'Gray',            'colorCode': '#808080',            'image': $getItem(itemData.imageIds[3]) ? $getItem(itemData.imageIds[3]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        },        {            'color': 'red',            'colorCode': '#FF0000',            'image': $getItem(itemData.imageIds[4]) ? $getItem(itemData.imageIds[4]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        },        {            'color': 'Gold',            'colorCode': '#FFD700',            'image': $getItem(itemData.imageIds[5]) ? $getItem(itemData.imageIds[5]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        },        {            'color': 'Blue',            'colorCode': '#0000FF',            'image': $getItem(itemData.imageIds[6]) ? $getItem(itemData.imageIds[6]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        },        {            'color': 'Graphite',            'colorCode': '#383838',            'image': $getItem(itemData.imageIds[7]) ? $getItem(itemData.imageIds[7]) : 'https://t4.ftcdn.net/jpg/04/70/29/97/360_F_470299797_UD0eoVMMSUbHCcNJCdv2t8B2g1GVqYgs.jpg'        }            ],    'id': id,    'name': itemData.name,'description': itemData.description,'price': itemData.variations[0].itemVariationData.priceMoney.amount,'brand': 'Cozie Shop','category': 'Accessories','inStock': true,'reviews': []})";
   try {
     const { result, ...httpResponse } = await catalogApi.listCatalog(
       "",
@@ -28,14 +28,16 @@ export default async function getProductsFromSquare() {
     const expression = jsonata(jsonata_query);
     const products = await expression.evaluate(result);
     console.log(statusCode);
-
-    //* Whenever retrieve products from Square --> add to database if not exists
-    
+    // console.log(
+    //   JSON.stringify(result, (key, value) =>
+    //     typeof value === "bigint" ? value.toString() : value
+    //   )
+    // );
 
     return products;
   } catch (error: any) {
     if (error instanceof ApiError) {
-      error.result.errors.forEach(function (e : any) {
+      error.result.errors.forEach(function (e: any) {
         console.log(e.category);
         console.log(e.code);
         console.log(e.detail);
@@ -47,6 +49,3 @@ export default async function getProductsFromSquare() {
     }
   }
 }
-
-
-
