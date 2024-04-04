@@ -6,7 +6,7 @@ import ProductCard from "./components/products/ProductCard";
 import getProducts, { IProductParams } from "@/actions/getProducts";
 import NullData from "./components/NullData";
 import getProductsFromSquare from "@/actions/getProductsFromSquare";
-import TestActions from "./components/testActions";
+// import TestActions from "./components/testActions";
 interface HomeProps{
   searchParams: IProductParams
 }
