@@ -27,7 +27,7 @@ export const categories = [
     icon: MdTv,
   },
   {
-    label: "Accesories",
+    label: "Accessories",
     icon: MdOutlineKeyboard,
   },
 ];

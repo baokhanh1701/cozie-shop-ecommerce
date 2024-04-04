@@ -30,7 +30,7 @@ export const products = [
       "PERFECT STROKE KEYS - Spherically-dished keys match the shape of your fingertips, offering satisfying feedback with every tap\nCOMFORT AND STABILITY - Type with confidence on a keyboard crafted for comfort, stability, and precision",
     price: 102.99,
     brand: "logitech",
-    category: "Accesories",
+    category: "Accessories",
     inStock: true,
     images: [
       {
@@ -143,7 +143,7 @@ export const products = [
       "Cross computer control: Game changing capacity to navigate seamlessly on 3 computers, and copy paste text, images, and files from 1 to the other using Logitech flow\nDual connectivity: Use with upto 3 Windows or Mac computers via included Unifying receiver or Bluetooth Smart wireless technology. Gesture button- Yes",
     price: 70,
     brand: "logitech",
-    category: "Accesories",
+    category: "Accessories",
     inStock: true,
     images: [
       {
