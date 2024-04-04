@@ -29,11 +29,11 @@ export default async function getProductsFromSquare() {
     const expression = jsonata(jsonata_query);
     const products = await expression.evaluate(result);
     console.log(statusCode);
-    console.log(
-      JSON.stringify(result, (key, value) =>
-        typeof value === "bigint" ? value.toString() : value
-      )
-    );
+    // console.log(
+    //   JSON.stringify(result, (key, value) =>
+    //     typeof value === "bigint" ? value.toString() : value
+    //   )
+    // );
 
     return products;
   } catch (error: any) {

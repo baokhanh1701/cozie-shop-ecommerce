@@ -14,18 +14,18 @@ export default async function getProductsFromSquare() {
   const jsonata_query: string =
     "$.objects.{'images': [{'color': 'Blue','colorCode': '#0000FF','image': 'https://firebasestorage.googleapis.com/v0/b/cozie-shop.appspot.com/o/products%2F1712137534743-1I7xZIE.png?alt=media&token=694e25e2-2149-4d16-a9e6-5ee82758d7f9'}],'id': id,'name': itemData.name,'description': itemData.description,'price': itemData.variations[0].itemVariationData.priceMoney.amount,'brand': 'Cozie Shop','category': 'Accessories','inStock': true,'reviews': []}";
   try {
-    const { result, ...httpResponse } = await ordersApi.listCatalog(
-      "",
-      "ITEM"
-    );
-    const { statusCode } = httpResponse;
-    const expression = jsonata(jsonata_query);
-    const products = await expression.evaluate(result);
-    console.log(statusCode);
-    return products;
+    // const { result, ...httpResponse } = await ordersApi.listCatalog(
+    //   "",
+    //   "ITEM"
+    // );
+    // const { statusCode } = httpResponse;
+    // const expression = jsonata(jsonata_query);
+    // const products = await expression.evaluate(result);
+    // console.log(statusCode);
+    // return products;
   } catch (error: any) {
     if (error instanceof ApiError) {
-      error.result.errors.forEach(function (e) {
+      error.result.errors.forEach(function (e : any) {
         console.log(e.category);
         console.log(e.code);
         console.log(e.detail);
