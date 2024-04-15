@@ -19,6 +19,7 @@ import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { deleteObject, getStorage, ref } from "firebase/storage";
 import firebaseApp from "@/libs/firebase";
+import syncProducts from "@/actions/SyncProducts";
 
 interface ManageProductsClientProps {
   products: Product[] | null;
@@ -30,6 +31,7 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
   const router = useRouter();
   const storage = getStorage(firebaseApp);
   let rows: any = [];
+
 
   if (products) {
     rows = products.map((product) => {
@@ -164,11 +166,28 @@ const ManageProductsClient: React.FC<ManageProductsClientProps> = ({
       });
   }, []);
 
+  const handleSyncProducts = async () => {
+    toast("Syncing product, please wait!");
+    await axios.post(`/api/product/sync`).then((res) => {
+      toast.success("Synced");
+      // router.refresh()
+    }).catch((err) => {
+      toast.error("Failed to sync products!");
+      console.log(err);
+    })
+  };
+
   return (
     <div className="max-w-[1150px] m-auto text-xl">
       <div className="mb-4 mt-8">
         <Heading title="Manage Products" center />
       </div>
+      <ActionBtn
+        icon={MdCached}
+        onClick={() => {
+          handleSyncProducts()
+        }}
+      />
       <div style={{ height: 600, width: "100%" }}>
         <DataGrid
           rows={rows}
