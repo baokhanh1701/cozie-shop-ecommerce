@@ -7,7 +7,7 @@ async function checkDeleteProducts(
   products_from_db: any,
   products_from_square: any
 ) {
-//   console.log("Check Delete Products...");
+  //   console.log("Check Delete Products...");
   const result = products_from_db.filter(
     (dbProduct: any) =>
       !products_from_square.some(
