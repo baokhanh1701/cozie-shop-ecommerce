@@ -23,7 +23,7 @@ export const categories = [
     icon: MdWatch,
   },
   {
-    label: "Tv",
+    label: "TV",
     icon: MdTv,
   },
   {
