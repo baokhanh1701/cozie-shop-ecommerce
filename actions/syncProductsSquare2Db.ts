@@ -22,14 +22,14 @@ export default async function syncProductsSquare2Db(
     const { name, description, brand, category, inStock, images, price, id } =
       product;
 
-    const existing_product = await prisma.product.findFirst({
-      where: {
-        id: generateObjectIdLikeString(id),
-      },
-    });
-    console.log(existing_product)
+    // const existing_product = await prisma.product.findFirst({
+    //   where: {
+    //     id: generateObjectIdLikeString(id),
+    //   },
+    // });
+    // console.log(existing_product)
 
-    // const existing_product = products_from_db.find((x: any) => x.id == id);
+    const existing_product = products_from_db.find((x: any) => x.id == generateObjectIdLikeString(id));
     //If not exists --> create else update
     if (!existing_product) {
       await prisma.product.create({

@@ -28,14 +28,14 @@ export default async function syncProducts() {
     );
 
     // console.log(deletedItems);
-    for (const deletedItem of deletedItems) {
-      console.log("deleting: ", deletedItem.id);
-      await prisma.product.delete({
-        where: {
-          id: deletedItem.id,
-        },
-      });
-    }
+    // for (const deletedItem of deletedItems) {
+    //   console.log("deleting: ", deletedItem.id);
+    //   await prisma.product.delete({
+    //     where: {
+    //       id: deletedItem.id,
+    //     },
+    //   });
+    // }
     await syncProductsSquare2Db(products_from_db, products_from_square);
   } catch (error) {
     console.log(error);
