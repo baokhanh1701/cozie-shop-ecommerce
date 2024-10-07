@@ -1,0 +1,167 @@
+{
+    "objects": [
+        {
+            "type": "ITEM",
+            "id": "7G5MGPYPVEZPIZAJFUK4LIAD",
+            "updatedAt": "2024-04-02T05:37:31.263Z",
+            "version": "1712036251263",
+            "isDeleted": false,
+            "presentAtAllLocations": true,
+            "itemData": {
+                "name": "Test Item 1",
+                "description": "Test Item 1",
+                "labelColor": "911C12",
+                "taxIds": [
+                    "IJIWMVBTMXPZ36IVNJSPDXMW"
+                ],
+                "variations": [
+                    {
+                        "type": "ITEM_VARIATION",
+                        "id": "5XD6MMNUTQY4VP5YP7FM4TPZ",
+                        "updatedAt": "2024-04-02T05:37:31.263Z",
+                        "version": "1712036251263",
+                        "isDeleted": false,
+                        "presentAtAllLocations": true,
+                        "itemVariationData": {
+                            "itemId": "7G5MGPYPVEZPIZAJFUK4LIAD",
+                            "name": "Regular",
+                            "sku": "test-item-1",
+                            "ordinal": 1,
+                            "pricingType": "FIXED_PRICING",
+                            "priceMoney": {
+                                "amount": "20",
+                                "currency": "VND"
+                            },
+                            "sellable": true,
+                            "stockable": true
+                        }
+                    }
+                ],
+                "productType": "REGULAR",
+                "skipModifierScreen": false,
+                "imageIds": [
+                    "FI3XN7EQFZPLUMUCVJ5S7ZUE"
+                ],
+                "descriptionHtml": "<p>Test Item 1</p>",
+                "descriptionPlaintext": "Test Item 1",
+                "isArchived": false
+            }
+        },
+        {
+            "type": "ITEM",
+            "id": "UJWPMTOGQSOOFGRLXDPIX2HC",
+            "updatedAt": "2024-04-02T05:37:54.54Z",
+            "version": "1712036274540",
+            "isDeleted": false,
+            "presentAtAllLocations": true,
+            "itemData": {
+                "name": "Test Item 2",
+                "description": "Test Item 2",
+                "labelColor": "911C12",
+                "taxIds": [
+                    "IJIWMVBTMXPZ36IVNJSPDXMW"
+                ],
+                "variations": [
+                    {
+                        "type": "ITEM_VARIATION",
+                        "id": "HIV6MILYRT6E4LOY6L6OKP7B",
+                        "updatedAt": "2024-04-02T05:37:52.852Z",
+                        "version": "1712036272852",
+                        "isDeleted": false,
+                        "presentAtAllLocations": true,
+                        "itemVariationData": {
+                            "itemId": "UJWPMTOGQSOOFGRLXDPIX2HC",
+                            "name": "Regular",
+                            "sku": "test-item-2",
+                            "ordinal": 1,
+                            "pricingType": "FIXED_PRICING",
+                            "priceMoney": {
+                                "amount": "20",
+                                "currency": "VND"
+                            },
+                            "locationOverrides": [
+                                {
+                                    "locationId": "LAZ0CPRAS8EBW",
+                                    "trackInventory": false
+                                },
+                                {
+                                    "locationId": "LK3K0GD0PRBM3",
+                                    "trackInventory": false
+                                }
+                            ],
+                            "trackInventory": false,
+                            "sellable": true,
+                            "stockable": true
+                        }
+                    }
+                ],
+                "productType": "REGULAR",
+                "skipModifierScreen": false,
+                "imageIds": [
+                    "FI3XN7EQFZPLUMUCVJ5S7ZUE"
+                ],
+                "descriptionHtml": "<p>Test Item 2</p>",
+                "descriptionPlaintext": "Test Item 2",
+                "isArchived": false
+            }
+        },
+        {
+            "type": "ITEM",
+            "id": "P7ZQD66SBPN7TYZQHIM6I7ZK",
+            "updatedAt": "2024-04-03T09:08:09.119Z",
+            "version": "1712135289119",
+            "isDeleted": false,
+            "presentAtAllLocations": true,
+            "itemData": {
+                "name": "Template Product",
+                "description": "This is a template product description.\n\nWelcome to the description.\n\nBold description.\nItalic description.\nUnderline description.\n\nBold, Underline, and Italic description.\n\nList 1\nList 2\nList 3\n\nBullet 1\nBullet 2\nBullet 3",
+                "labelColor": "911C12",
+                "taxIds": [
+                    "IJIWMVBTMXPZ36IVNJSPDXMW"
+                ],
+                "variations": [
+                    {
+                        "type": "ITEM_VARIATION",
+                        "id": "SZIFDXALI6L5N27MSXFVKUFQ",
+                        "updatedAt": "2024-04-03T09:08:06.888Z",
+                        "version": "1712135286888",
+                        "isDeleted": false,
+                        "presentAtAllLocations": true,
+                        "itemVariationData": {
+                            "itemId": "P7ZQD66SBPN7TYZQHIM6I7ZK",
+                            "name": "Regular",
+                            "sku": "template-product",
+                            "upc": "12345678",
+                            "ordinal": 1,
+                            "pricingType": "FIXED_PRICING",
+                            "priceMoney": {
+                                "amount": "20",
+                                "currency": "VND"
+                            },
+                            "locationOverrides": [
+                                {
+                                    "locationId": "LAZ0CPRAS8EBW"
+                                },
+                                {
+                                    "locationId": "LK3K0GD0PRBM3"
+                                }
+                            ],
+                            "trackInventory": false,
+                            "sellable": true,
+                            "stockable": true
+                        }
+                    }
+                ],
+                "productType": "REGULAR",
+                "skipModifierScreen": false,
+                "imageIds": [
+                    "26DU7MIVHRZE3AG3DYHVGMBD",
+                    "I5FJBOPU7DNMMD3B2FHFEIJA"
+                ],
+                "descriptionHtml": "<p><br></p><p>This is a template product description.</p><p><br></p><p>Welcome to the description.</p><p><br></p><p><strong>Bold description.</strong></p><p><em>Italic description.</em></p><p><u>Underline description.</u></p><p><br></p><p><strong><em><u>Bold, Underline, and Italic description.</u></em></strong></p><p><br></p><ol><li>List 1</li><li>List 2</li><li>List 3</li></ol><p><br></p><ul><li>Bullet 1</li><li>Bullet 2</li><li>Bullet 3</li></ul><p><br></p><p><br></p>",
+                "descriptionPlaintext": "This is a template product description.\n\nWelcome to the description.\n\nBold description.\nItalic description.\nUnderline description.\n\nBold, Underline, and Italic description.\n\nList 1\nList 2\nList 3\n\nBullet 1\nBullet 2\nBullet 3",
+                "isArchived": false
+            }
+        }
+    ]
+}
